@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Difference Calculator",
-  "main": "index.js",
+  "main": "src/ndex.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Shamatarev/frontend-project-46#readme",
   "dependencies": {
-    "commander": "^9.5.0"
+    "commander": "^9.5.0",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
