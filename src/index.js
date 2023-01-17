@@ -74,7 +74,7 @@ function gendiff(file1, file2) {
       case 'unchanged':
         return `  ${result.key}: ${result.value}`;
       case 'changed':
-          return `- ${result.key}: ${result.value1} \n+ ${result.key}: ${result.value2}`;
+          return `- ${result.key}: ${result.value1}\n+ ${result.key}: ${result.value2}`;
       case 'added':
         return `+ ${result.key}: ${result.value}`;
       case 'delited':
@@ -84,7 +84,7 @@ function gendiff(file1, file2) {
        }
      }); 
   return `{\n${exportResult.join('\n')}\n}`;
-};
+}
 
 
 export default gendiff
