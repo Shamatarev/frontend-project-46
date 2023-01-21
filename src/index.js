@@ -8,7 +8,6 @@ function gendiff(file1, file2) {
     const content = (path) => JSON.parse(readFileSync(path, 'utf-8'));
     
     //console.log(content(path(file1)));
-
     const cont1 = content(path(file1));
     const cont2 = content(path(file2));
     //console.log(cont1);
