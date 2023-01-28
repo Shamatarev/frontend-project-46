@@ -11,9 +11,19 @@ function getIsEqual(cont1, cont2) {
     //console.log(sumArrowKeys);
   const result = sumArrowKeys.map((key) => {
     const value1 = cont1[key];
-    //console.log(value1)
     const value2 = cont2[key];
-   // console.log(value2)
+
+
+
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+      //console.log('value1', value1)
+      //console.log('value2', value2)
+        return { 
+            type: 'children', 
+            key, 
+            children: getIsEqual(value1, value2)  
+         };
+    }
     if(_.isEqual(value1, value2)){
         //console.log({type: 'unchanged', key, value: value1})
         return {
@@ -47,7 +57,9 @@ function getIsEqual(cont1, cont2) {
             value2,
           }; 
         }
+
     });
+// console.log('tree result',result)
 return result;
 }
 

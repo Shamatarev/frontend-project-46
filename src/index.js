@@ -8,6 +8,23 @@ import getParse from './designParse.js'
 import getFormat from './designFormat.js'
 
 // const getPath = (file) => path.resolve(cwd(),file);
+const indent = ' ';
+
+const separator = (depth, full = false) => {
+  const size = depth * 4;
+  return full ? indent.repeat(size) : indent.repeat(size - 2);
+};
+
+const stringify = (data , depth) => {
+
+  if (!_.isPlainObject(data)) {
+    return String(data);
+  }
+  const lines = Object
+    .entries(data)
+    .map(([key, value]) => `${separator(depth + 1, true)}${key}: ${stringify(value, depth + 1)}`);
+    return `{\n${lines.join('\n')}\n${separator(depth, true)}}`;
+}
 
 const getFileContent = (path) => readFileSync(path, 'utf-8')
 
@@ -35,24 +52,33 @@ function gendiff(file1, file2) {
     // console.log('ddormat file 1',getFormat(file1))
     // console.log('dataParse2',dataParse2)
     
+    
     const genInfo = getIsEqual(dataParse1, dataParse2);
-    //console.log(genInfo);
-    const exportResult = genInfo.map((result) =>{
+
+    //console.log('genInfo',genInfo);
+
+    const exportResult = (array, depth = 1) => array.map((result) =>{
      const key = result.type
+     //const line = stringify(Object.assign({}, result.children));
+     //console.log(result.children)
+  
      switch (key) {
+      case 'children':
+        return `${separator(depth, true)}${result.key}: {\n${exportResult(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
       case 'unchanged':
-        return `  ${result.key}: ${result.value}`;
+        return `${separator(depth, true)}${result.key}: ${stringify(result.value, depth)}`;
       case 'changed':
-          return `- ${result.key}: ${result.value1}\n+ ${result.key}: ${result.value2}`;
+        return `${separator(depth)}- ${result.key}: ${stringify(result.value1, depth)}\n${separator(depth)}+ ${result.key}: ${stringify(result.value2, depth)}`;
       case 'added':
-        return `+ ${result.key}: ${result.value}`;
+        return `${separator(depth)}+ ${result.key}: ${stringify(result.value, depth)}`;
       case 'delited':
-        return `- ${result.key}: ${result.value}`;
-      default:
-        return null;
+        return `${separator(depth)}- ${result.key}: ${stringify(result.value, depth)}`;
+        default:
+          throw new Error(`Unknown node type ${result.type}.`);
        }
      }); 
-  return `{\n${exportResult.join('\n')}\n}`;
+     
+  return `{\n${exportResult(genInfo).join('\n')}\n}`;
 }
 
 //console.log(gendiff('__fixtures__/file1.json','__fixtures__/file2.json'))
