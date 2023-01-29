@@ -59,7 +59,7 @@ function getIsEqual(cont1, cont2) {
         }
 
     });
-// console.log('tree result',result)
+//console.log('tree result',result)
 return result;
 }
 
