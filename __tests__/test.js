@@ -1,6 +1,6 @@
 
 
-import { test, expect } from '@jest/globals';
+import { test, expect, describe } from '@jest/globals';
 import gendiff from '../src/index.js';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
@@ -15,14 +15,15 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const readFixture = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
+const formats = ['json'];
 
-
-test('gendiff', () => {
-const file1 = getFixturePath(`file1.json`);
-const file2 = getFixturePath(`file2.json`); 
-//const filepath1 = getFixturePath(`filepath1.yml`);
-//const filepath2 = getFixturePath(`filepath2.yml`); 
-
-expect(gendiff(file1,file2)).toEqual(readFixture('expected.txt'));
-//expect(gendiff(filepath1,filepath2)).toEqual(readFixture('expected.txt'));
+describe('gendiff', () => {
+    test.each(formats)('genDiff should work with %p', (format) => {
+    const file1 = getFixturePath(`file1.${format}`);
+    const file2 = getFixturePath(`file2.${format}`); 
+    //const filepath1 = getFixturePath(`filepath1.yml`);
+    //const filepath2 = getFixturePath(`filepath2.yml`); 
+    expect(gendiff(file1, file2, 'stylish')).toEqual(readFixture('expectedStylish.txt'));
+    expect(gendiff(file1, file2, 'plain')).toEqual(readFixture('expectedPlain.txt'));     
+    });
 });
