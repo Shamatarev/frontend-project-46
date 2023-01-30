@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1675108855751" clover="3.2.0">
+  <project timestamp="1675108855751" name="All files">
+    <metrics statements="71" coveredstatements="67" conditionals="45" coveredconditionals="38" methods="19" coveredmethods="19" elements="135" coveredelements="124" complexity="0" loc="71" ncloc="71" packages="2" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="29" coveredstatements="28" conditionals="18" coveredconditionals="14" methods="6" coveredmethods="6"/>
+      <file name="index.js" path="/home/shamatarev/Projects/frontend-project-46/src/index.js">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+      </file>
+      <file name="makeFormat.js" path="/home/shamatarev/Projects/frontend-project-46/src/makeFormat.js">
+        <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="18" type="cond" truecount="0" falsecount="1"/>
+      </file>
+      <file name="makeParse.js" path="/home/shamatarev/Projects/frontend-project-46/src/makeParse.js">
+        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="18" type="cond" truecount="3" falsecount="1"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+      <file name="makeTree.js" path="/home/shamatarev/Projects/frontend-project-46/src/makeTree.js">
+        <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="2" coveredmethods="2"/>
+        <line num="4" count="45" type="stmt"/>
+        <line num="5" count="45" type="stmt"/>
+        <line num="6" count="45" type="stmt"/>
+        <line num="8" count="45" type="stmt"/>
+        <line num="9" count="162" type="stmt"/>
+        <line num="10" count="162" type="stmt"/>
+        <line num="12" count="162" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="36" type="stmt"/>
+        <line num="19" count="126" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="27" type="stmt"/>
+        <line num="26" count="99" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="45" type="stmt"/>
+        <line num="33" count="54" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="18" type="stmt"/>
+        <line num="40" count="36" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="36" type="stmt"/>
+        <line num="51" count="45" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.formaters">
+      <metrics statements="42" coveredstatements="39" conditionals="27" coveredconditionals="24" methods="13" coveredmethods="13"/>
+      <file name="index.js" path="/home/shamatarev/Projects/frontend-project-46/src/formaters/index.js">
+        <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="7" count="9" type="cond" truecount="3" falsecount="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="plain.js" path="/home/shamatarev/Projects/frontend-project-46/src/formaters/plain.js">
+        <metrics statements="17" coveredstatements="16" conditionals="11" coveredconditionals="10" methods="6" coveredmethods="6"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="39" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="21" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="13" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="54" type="stmt"/>
+        <line num="16" count="45" type="stmt"/>
+        <line num="17" count="45" type="stmt"/>
+        <line num="19" count="45" type="cond" truecount="4" falsecount="1"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+      </file>
+      <file name="stylish.js" path="/home/shamatarev/Projects/frontend-project-46/src/formaters/stylish.js">
+        <metrics statements="20" coveredstatements="19" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="6"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="126" type="stmt"/>
+        <line num="8" count="126" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="81" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="60" type="stmt"/>
+        <line num="16" count="21" type="stmt"/>
+        <line num="18" count="27" type="stmt"/>
+        <line num="19" count="21" type="stmt"/>
+        <line num="23" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="54" type="stmt"/>
+        <line num="26" count="54" type="cond" truecount="5" falsecount="1"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="30" count="9" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+        <line num="34" count="15" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
