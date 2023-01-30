@@ -1,3 +1,6 @@
+    Описание.
+Gen Diff - это cli-приложение, которое генерирует разницу между двумя файлами и выводит ее в одном из трех форматов. Приложение работает с форматами json и yaml(yml). Поддерживаемые форматы вывода: stylish, plain и json.
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Shamatarev/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Shamatarev/frontend-project-46/actions)
 

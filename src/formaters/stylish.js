@@ -1,7 +1,6 @@
 
 import _ from 'lodash';
 
-// const getPath = (file) => path.resolve(cwd(),file);
 const indent = ' ';
 
 const separator = (depth, full = false) => {
@@ -18,17 +17,15 @@ const stringify = (data , depth) => {
     .entries(data)
     .map(([key, value]) => `${separator(depth + 1, true)}${key}: ${stringify(value, depth + 1)}`);
     return `{\n${lines.join('\n')}\n${separator(depth, true)}}`;
-}
+};
 
 
-    const exportResult = (array, depth = 1) => array.map((result) =>{
+    const renderNode = (array, depth = 1) => array.map((result) =>{
      const key = result.type
-     //const line = stringify(Object.assign({}, result.children));
-     //console.log(result.children)
   
      switch (key) {
       case 'children':
-        return `${separator(depth, true)}${result.key}: {\n${exportResult(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
+        return `${separator(depth, true)}${result.key}: {\n${renderNode(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
       case 'unchanged':
         return `${separator(depth, true)}${result.key}: ${stringify(result.value, depth)}`;
       case 'changed':
@@ -42,9 +39,9 @@ const stringify = (data , depth) => {
        }
      }); 
  
-function drowTree (designTree) {
-  return `{\n${exportResult(designTree).join('\n')}\n}`;
+function generateTree (designTree) {
+  return `{\n${renderNode(designTree).join('\n')}\n}`;
 }
 
 
-export {drowTree, exportResult}
+export default generateTree;

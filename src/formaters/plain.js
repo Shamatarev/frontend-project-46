@@ -10,11 +10,11 @@ const stringify = (data) => {
     return String(data);
 };
   
-const designPath = (node, path) => (path !== '' ? `${path}.${node.key}` : String(node.key));
+const generatePath = (node, path) => (path !== '' ? `${path}.${node.key}` : String(node.key));
 
   const exportNode = (array, path) => array.filter((node) => node.type !== 'unchanged').map((node) =>{
     const key = node.type
-    const allPath = designPath(node, path)
+    const allPath = generatePath(node, path)
  
     switch (key) {
      case 'children':
@@ -30,7 +30,7 @@ const designPath = (node, path) => (path !== '' ? `${path}.${node.key}` : String
       }
     }); 
 
-function drowTreePlain (designTree) {
- return `${exportNode(designTree, '').join('\n')}`;
+function generateTreePlain (propertyPath) {
+ return `${exportNode(propertyPath, '').join('\n')}`;
 }
-export default drowTreePlain;
+export default generateTreePlain;

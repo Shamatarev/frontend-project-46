@@ -1,14 +1,14 @@
 
-import { drowTree } from './stylish.js'
-import drowTreePlain from './plain.js';
+import  generateTree  from './stylish.js'
+import generateTreePlain from './plain.js';
 
 
 export default (difference, format) => {
   switch (format) {
     case 'stylish':
-        return drowTree(difference);
+        return generateTree(difference);
     case 'plain':
-        return drowTreePlain(difference);
+        return generateTreePlain(difference);
     case 'json':
         return JSON.stringify(difference);       
     default:
