@@ -5,7 +5,7 @@ function makeTree(cont1, cont2) {
   const arrowKeysFile2 = Object.keys(cont2);
   const sumArrowKeys = _.sortBy(_.union(arrowKeysFile1, arrowKeysFile2));
 
-  // eslint-disable-next-line array-callback-return
+  // eslint-disable-next-line array-callback-return, consistent-return
   const result = sumArrowKeys.map((key) => {
     const value1 = cont1[key];
     const value2 = cont2[key];
