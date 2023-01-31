@@ -20,19 +20,19 @@ const stringify = (data , depth) => {
 };
 
 
-    const renderNode = (array, depth = 1) => array.map((result) =>{
+    const getNode = (array, depth = 1) => array.map((result) =>{
      const key = result.type
   
      switch (key) {
       case 'children':
-        return `${separator(depth, true)}${result.key}: {\n${renderNode(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
+        return `${separator(depth, true)}${result.key}: {\n${getNode(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
       case 'unchanged':
         return `${separator(depth, true)}${result.key}: ${stringify(result.value, depth)}`;
       case 'changed':
         return `${separator(depth)}- ${result.key}: ${stringify(result.value1, depth)}\n${separator(depth)}+ ${result.key}: ${stringify(result.value2, depth)}`;
       case 'added':
         return `${separator(depth)}+ ${result.key}: ${stringify(result.value, depth)}`;
-      case 'delited':
+      case 'deleted':
         return `${separator(depth)}- ${result.key}: ${stringify(result.value, depth)}`;
         default:
           throw new Error(`Unknown node type ${result.type}.`);
@@ -40,7 +40,7 @@ const stringify = (data , depth) => {
      }); 
  
 function generateTree (designTree) {
-  return `{\n${renderNode(designTree).join('\n')}\n}`;
+  return `{\n${getNode(designTree).join('\n')}\n}`;
 }
 
 

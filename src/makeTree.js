@@ -32,7 +32,7 @@ function makeTree(cont1, cont2) {
     }
        if(!Object.hasOwn(cont2, key)){
         return {
-            type: 'delited',
+            type: 'deleted',
             key,
             value: value1,
           }; 

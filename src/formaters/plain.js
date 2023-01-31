@@ -23,7 +23,7 @@ const generatePath = (node, path) => (path !== '' ? `${path}.${node.key}` : Stri
        return `Property '${allPath}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
      case 'added':
        return `Property '${allPath}' was added with value: ${stringify(node.value)}`;
-     case 'delited':
+     case 'deleted':
        return `Property '${allPath}' was removed`;
        default:
          throw new Error(`Unknown node type ${node.type}.`);
