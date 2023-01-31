@@ -1,16 +1,16 @@
-
-import  generateTree  from './stylish.js'
+// eslint-disable-next-line import/extensions
+import generateTree from './stylish.js';
+// eslint-disable-next-line import/extensions
 import generateTreePlain from './plain.js';
-
 
 export default (difference, format) => {
   switch (format) {
     case 'stylish':
-        return generateTree(difference);
+      return generateTree(difference);
     case 'plain':
-        return generateTreePlain(difference);
+      return generateTreePlain(difference);
     case 'json':
-        return JSON.stringify(difference);       
+      return JSON.stringify(difference);
     default:
       throw new Error(`The ${format} format is not supported.\nSupported output formats: stylish, plain and json.`);
   }

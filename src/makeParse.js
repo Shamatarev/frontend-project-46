@@ -1,8 +1,7 @@
-
-//import _ from 'lodash';
+// import _ from 'lodash';
 import YAML from 'js-yaml';
 
- const makeParse = (data, format) => {
+const makeParse = (data, format) => {
   switch (format) {
     case 'json':
       return JSON.parse(data);
@@ -14,7 +13,5 @@ import YAML from 'js-yaml';
       throw new Error(`Unknown format ${format}.\nSupported formats: json, yml.`);
   }
 };
-
-
 
 export default makeParse;
