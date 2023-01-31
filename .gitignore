@@ -1,3 +1,5 @@
 node_modules/
-testcopy.js
+*.log
+coverage
+.DS_Store
 
