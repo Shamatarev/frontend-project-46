@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/extensions
 import generateTree from './stylish.js';
-// eslint-disable-next-line import/extensions
 import generateTreePlain from './plain.js';
 
 export default (difference, format) => {

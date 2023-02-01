@@ -1,11 +1,7 @@
 import { readFileSync } from 'node:fs';
-// eslint-disable-next-line import/extensions
 import makeParse from './makeParse.js';
-// eslint-disable-next-line import/extensions
 import makeFormat from './makeFormat.js';
-// eslint-disable-next-line import/extensions
 import functionFormat from './formaters/index.js';
-// eslint-disable-next-line import/extensions
 import makeTree from './makeTree.js';
 
 const getFileContent = (path) => readFileSync(path, 'utf-8');

@@ -13,10 +13,10 @@ const stringify = (data) => {
 const generatePath = (node, path) => (path !== '' ? `${path}.${node.key}` : String(node.key));
 
 const exportNode = (array, path) => array.filter((node) => node.type !== 'unchanged').map((node) => {
-  const key = node.type;
+  const { type } = node;
   const allPath = generatePath(node, path);
 
-  switch (key) {
+  switch (type) {
     case 'children':
       return `${exportNode(node.children, allPath).join('\n')}`;
     case 'changed':

@@ -18,9 +18,9 @@ const stringify = (data, depth) => {
 };
 
 const getNode = (array, depth = 1) => array.map((result) => {
-  const key = result.type;
+  const { type } = result;
 
-  switch (key) {
+  switch (type) {
     case 'children':
       return `${separator(depth, true)}${result.key}: {\n${getNode(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
     case 'unchanged':
