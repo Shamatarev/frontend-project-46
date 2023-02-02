@@ -21,7 +21,7 @@ const getNode = (array, depth = 1) => array.map((result) => {
   const { type } = result;
 
   switch (type) {
-    case 'children':
+    case 'parent':
       return `${separator(depth, true)}${result.key}: {\n${getNode(result.children, depth + 1).join('\n')}\n${separator(depth, true)}}`;
     case 'unchanged':
       return `${separator(depth, true)}${result.key}: ${stringify(result.value, depth)}`;

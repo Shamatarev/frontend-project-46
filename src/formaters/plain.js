@@ -17,7 +17,7 @@ const exportNode = (array, path) => array.filter((node) => node.type !== 'unchan
   const allPath = generatePath(node, path);
 
   switch (type) {
-    case 'children':
+    case 'parent':
       return `${exportNode(node.children, allPath).join('\n')}`;
     case 'changed':
       return `Property '${allPath}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;

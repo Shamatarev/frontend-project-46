@@ -11,7 +11,7 @@ function makeTree(cont1, cont2) {
 
     if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
       return {
-        type: 'children',
+        type: 'parent',
         key,
         children: makeTree(value1, value2),
       };
